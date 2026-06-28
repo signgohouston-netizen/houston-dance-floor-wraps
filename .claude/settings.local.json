@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install >/tmp/npm-install.log 2>&1 & *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"home:%{http_code} \" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"pricing:%{http_code} \" http://localhost:3000/pricing)",
+      "Bash(curl -s -o /dev/null -w \"area:%{http_code} \" http://localhost:3000/service-areas/florida)",
+      "Bash(curl -s -o /dev/null -w \"blog:%{http_code} \" http://localhost:3000/blog/what-is-a-vinyl-dance-floor-wrap)",
+      "Bash(curl -s -o /dev/null -w \"sitemap:%{http_code}\\\\n\" http://localhost:3000/sitemap.xml)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls -lat ~/Downloads 2>/dev/null | head -10; echo \"---DESKTOP---\"; ls -lat ~/Desktop 2>/dev/null | head -10; echo \"---SCRATCH---\"; ls -lat \"/private/tmp/claude-501/-Users-azeem-Desktop-houstondancefloorwraps/eaf94a81-054c-47a9-885a-65a5f9ae1d05/scratchpad\" 2>/dev/null | head)",
+      "Bash(find ~/Desktop ~/Downloads ~/.claude /private/tmp/claude-501 -type f \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.webp\" \\\\\\) -newermt \"2026-06-28 01:00:00\" 2>/dev/null | grep -v node_modules | grep -v houstondancefloorwraps/public | head -30)",
+      "Bash(python3 -c \"import PIL; print\\('Pillow', PIL.__version__\\)\")",
+      "Bash(python3 -c \"import numpy; print\\('numpy', numpy.__version__\\)\")",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('public/logo.png'\\); print\\('size', im.size, 'mode', im.mode\\)\")",
+      "Bash(python3 /tmp/make_transparent.py)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\('logo 3.png'\\); print\\('size', im.size, 'mode', im.mode\\)\")",
+      "Bash(python3 /tmp/make_transparent2.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/about)",
+      "Bash(curl -s -o /dev/null -w \"about:%{http_code}\\\\n\" http://localhost:3000/about)",
+      "Bash(curl -s http://localhost:3000/contact)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/contact)",
+      "Bash(curl -s -o /dev/null -w \"gallery:%{http_code}\\\\n\" http://localhost:3000/gallery)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/gallery)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s http://localhost:3000/gallery)",
+      "Bash(git --version)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(grep -E \"node_modules|\\\\.next/|\\\\.env$\")"
+    ]
+  }
+}
