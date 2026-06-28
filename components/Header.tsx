@@ -22,6 +22,9 @@ export default function Header() {
     setOpen(false);
   }, [pathname]);
 
+  // Homepage hero is a dark photo — use light header text until scrolled.
+  const overDark = pathname === "/" && !scrolled;
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -54,8 +57,10 @@ export default function Header() {
                 href={link.href}
                 className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "text-pink-400"
-                    : "text-chrome-light hover:text-charcoal"
+                    ? "text-gold-400"
+                    : overDark
+                      ? "text-white/85 hover:text-white"
+                      : "text-chrome-light hover:text-charcoal"
                 }`}
               >
                 {link.label}
@@ -65,7 +70,14 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={site.phoneHref} className="btn-ghost text-sm">
+          <a
+            href={site.phoneHref}
+            className={`btn text-sm ${
+              overDark
+                ? "text-white hover:text-gold-400"
+                : "text-charcoal hover:text-gold-600"
+            }`}
+          >
             📞 {site.phone}
           </a>
           <Link href="/contact" className="btn-primary">
@@ -74,7 +86,7 @@ export default function Header() {
         </div>
 
         <button
-          className="lg:hidden text-charcoal"
+          className={`lg:hidden ${overDark ? "text-white" : "text-charcoal"}`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
